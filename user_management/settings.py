@@ -152,6 +152,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR/'static/'
 STATICFILES_DIRS = [
     'user_management/static',
+    'filiere/static',
 ]
 
 LOGIN_REDIRECT_URL = '/'

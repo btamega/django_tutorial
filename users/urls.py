@@ -4,8 +4,7 @@ from django.contrib import admin
 from users.forms import LoginForm
 from django.urls import path
 from .views import home, profile, RegisterView
-from django.conf.urls import url
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 
 urlpatterns = [
@@ -31,5 +30,5 @@ urlpatterns = [
 
     path('password-change/', ChangePasswordView.as_view(), name='password_change'),
 
-    url(r'^oauth/', include('social_django.urls', namespace='social')),
+     re_path(r'^oauth/', include('social_django.urls', namespace='social')),
 ]
