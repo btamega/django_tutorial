@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UserConfig',
-    'social_django',
+    # 'social_django',
     'semestre',
      'filiere',
     'emploie',

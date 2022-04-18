@@ -19,6 +19,9 @@ class Etablissement(models.Model):
     nom = models.CharField(max_length=100, null=True)
     adresse = models.CharField(max_length=100, null=True)
     telephone = models.CharField(max_length=20, null=True)
+    niveau=models.CharField(max_length=100,null=True)
+    website=models.URLField(max_length=100,null=True)
+    email=models.EmailField(max_length=100,null=True)
     logo = models.ImageField(upload_to=upload_location_etablissement)
     def __str__(self):
         return self.nom
