@@ -1,3 +1,4 @@
+import email
 from re import T
 from django.shortcuts import render
 
@@ -153,11 +154,14 @@ def etablissement_create(request):
             adresse = form.cleaned_data['adresse']
             telephone = form.cleaned_data['telephone']
             logo = form.cleaned_data['logo']
+            niveau=form.cleaned_data['niveau']
+            website=form.cleaned_data['website']
+            email=form.cleaned_data['email']
             if not logo :
-                data = Etablissement(nom=nom,adresse=adresse,telephone=telephone)
+                data = Etablissement(nom=nom,adresse=adresse,telephone=telephone,niveau=niveau,website=website,email=email)
                 data.save()
             else:
-                data = Etablissement(nom=nom,adresse=adresse,telephone=telephone,logo=logo)
+                data = Etablissement(nom=nom,adresse=adresse,telephone=telephone,logo=logo,niveau=niveau,website=website,email=email)
                 data.save()
         return HttpResponseRedirect('/filiere_etab/etablissement')
     html_template = loader.get_template('filiere/page-404.html')
@@ -174,12 +178,21 @@ def etablissement_edit(request,id):
             nom = form.cleaned_data['nom']
             adresse = form.cleaned_data['adresse']
             telephone = form.cleaned_data['telephone']
+            niveau=form.cleaned_data['niveau']
+            website=form.cleaned_data['website']
+            email=form.cleaned_data['email']
             if etablissement.nom != nom:
                 etablissement.nom = nom
             if etablissement.adresse != adresse:
                 etablissement.adresse = adresse
             if etablissement.telephone != telephone:
                 etablissement.telephone = telephone
+            if etablissement.niveau != niveau:
+                etablissement.niveau = niveau
+            if etablissement.website != website:
+                etablissement.website = website
+            if etablissement.email != email:
+                etablissement.email = email
             logo = form.cleaned_data['logo']
             if logo :
                 if etablissement.logo and len(etablissement.logo) > 0:

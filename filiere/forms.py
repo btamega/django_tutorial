@@ -11,3 +11,7 @@ class EtablissementForm(forms.Form):
     adresse = forms.CharField(max_length=30)
     telephone = forms.CharField(max_length=13)
     logo = forms.ImageField(required=False)
+    niveau=forms.CharField(max_length=100)
+    website=forms.URLField(max_length=200)
+    email=forms.EmailField(max_length=254)
+    
