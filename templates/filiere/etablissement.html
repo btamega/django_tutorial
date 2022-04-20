@@ -87,7 +87,7 @@
               <td id="nom">{{dt.nom}}</td>
               <td id="adresse">{{dt.adresse}}</td>
               <td id="telephone">{{dt.telephone}}</td>
-              <td id="niveau">{{dt.niveau}</td>
+              <td id="niveau">{{dt.niveau}}</td>
               <td id="website">{{dt.website}}</td>
               <td id="email">{{dt.email}}</td>
               <td class="image">
@@ -232,7 +232,7 @@
           </div>
           <div class="form-group">
             <label for="exampleSelect1">Niveau</label>
-            <select class="form-select" id="exampleSelect1">
+            <select name="niveau" class="form-select" id="exampleSelect1">
               <option>Préscolaire</option>
               <option>Primaire</option>
               <option>Secondaire</option>
@@ -241,11 +241,11 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Adresse email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Site web</label>
-            <input type="url" class="form-control" id="exampleInputEmail1" aria-describedby="urlHelp" placeholder="https://" required>
+            <input type="url" name="website" class="form-control" id="exampleInputEmail1" aria-describedby="urlHelp" placeholder="https://" required>
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label"

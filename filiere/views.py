@@ -148,8 +148,10 @@ def etablissement_search(request):
 def etablissement_create(request):
     context = {}
     if request.method == "POST":
+        
         form = EtablissementForm(request.POST,request.FILES)
         if form.is_valid():
+            print("Test réussi")
             nom = form.cleaned_data['nom']
             adresse = form.cleaned_data['adresse']
             telephone = form.cleaned_data['telephone']
