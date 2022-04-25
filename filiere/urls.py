@@ -1,6 +1,8 @@
+import imp
+from django.db import router
 from django.urls import path, re_path
 from filiere import views
-
+from rest_framework import routers
 urlpatterns = [
 
     # gestion des Fillieres
@@ -17,7 +19,14 @@ urlpatterns = [
     path('etablissement/search', views.etablissement_search, name='etablissement_search'),
     path('etablissement/create', views.etablissement_create, name='etablissement_create'),
     path('etablissement/edit/<int:id>', views.etablissement_edit, name='etablissement_edit'),
+    path('test',views.FiliereViewSet),
+    #path('test',views.FiliereViewSet)
     # Matches any html file
     # re_path(r'^.*\.*', views.pages, name='pages'),
 
 ]
+
+# API REST
+router=routers.DefaultRouter()
+#router.register('filiere',views.FiliereViewSet)
+#router.register('etablissement',views.EtablissementViewSet)

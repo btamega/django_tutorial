@@ -12,6 +12,11 @@ from filiere.forms import EtablissementForm
 
 from filiere.models import Filiere
 from filiere.models import Etablissement
+from rest_framework import viewsets
+from filiere.models import Filiere
+from filiere.models import Etablissement
+from filiere.serializers import EtablissementSerializer, FiliereSerializer
+
 
 ######################################################
 # gestion des Fillieres
@@ -105,6 +110,15 @@ def filiere_edit(request,id):
         return HttpResponseRedirect('/filiere_etab/filiere')
     html_template = loader.get_template('filiere/page-404.html')
     return HttpResponse(html_template.render(context, request))  
+
+# API REST
+class FiliereViewSet(viewsets.ModelViewSet):
+    queryset=Filiere.objects.all()
+    serialize_class=FiliereSerializer
+    
+class EtablissementViewSet(viewsets.ModelViewSet):
+    queryset=Etablissement.objects.all()
+    serialize_class=EtablissementSerializer
     
 ######################################################
 # gestion des Etablissements
